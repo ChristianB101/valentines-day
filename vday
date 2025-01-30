@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love</title>
+    <style>
+        body {
+            background-color: green; /* Initial green background */
+            font-family: Courier New, monospace;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 1s ease;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        #heart {
+            font-size: 5em;
+            animation: heartbeat 1s infinite alternate;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: white;
+            color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: green;
+            color: white;
+        }
+		
+		#flowers {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .flower {
+            font-size: 3em;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .flower:hover {
+            transform: scale(1.2);
+            color: #ff69b4; /* Pink color for hover effect */
+        }
+
+        #images {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        #images img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Heartbeat animation */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+		
+					#heart-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none; /* Allows clicks to pass through */
+				overflow: hidden;
+			}
+
+			.heart {
+				position: absolute;
+				font-size: 2em;
+				color: red;
+				animation: flutter 5s linear infinite, fadeOut 5s ease-in-out infinite;
+				transform: translateY(100vh); /* Start from the bottom */
+			}
+
+			@keyframes flutter {
+				0% { transform: translateY(100vh) rotate(0deg); }
+				50% { transform: translateY(50vh) rotate(30deg); }
+				100% { transform: translateY(-10vh) rotate(-30deg); }
+			}
+
+			@keyframes fadeOut {
+				0% { opacity: 1; }
+				100% { opacity: 0; }
+			}
+			
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine?? 💌:)</h1>
+	
+	<p>This is long overdue, you deserve something special because of the great person you are. Down to earth, honest , and genuine. I so glad to have you in my corner and be able to call you my girlfriend. From forgiving me for my mistakes, comforting me when Im down, and giving me a place to call home, I love you with all my heart</p>
+	<p>Where do I start, from the day we met you have done nothing but support me and my dreams. You are a blessing from god!! My younger self would be so proud of me. I've never seen a healthy relationship before and with it being with you and to grow with you is everything to me</p>
+	<p>You make me a better man, brother, son and boyfriend. I have a plan to build a whole life with you and see the world. You are the reason I wake up to be a better person than I was yesterday. YOU DESERVE THE WORLD. To one of many Valentines day, I will always have your back. To the moon and back; Will you be my Valentine</p>
+	
+	
+	<h2>My favorite memories with you🥳</h2>
+	
+	<ol>
+			<li>Our first date: Oh was I nervous, you looked gorgeous!! went beyond my expectations</li>
+			<li>Gabby's Camping Birthday: Our first "vacation" together, it felt like we were a team and did everything together </li>
+			<li>Before freshman year summer we went to Brooklyn Bridge Park to watch the movie on the grass </li>
+			<li>Sadly When you dropped me off at college</li>
+			<li>MY 20th BIRTHDAY!!! BEST BIRTHDAY EVER</li>
+			<li>Your 19th Birthday Dinner: Finally had enough money to take you to a nice resturant. It was worth the experience.</li>
+	</ol>
+	
+    <div id="heart">❤️</div>
+    <button onclick="changeBackground()">Change to the color of love</button>
+
+    <div id="images">
+        <!-- Replace 'image1.jpg' and 'image2.jpg' with the path to your images -->
+		
+        <img src="C:\Users\chris\OneDrive\v-day.html\twin .jpg" alt="me + lianny" />
+		
+        <img src="C:\Users\chris\OneDrive\v-day.html\IMG_6787.HEIC" alt="me + lianny" />
+		
+		<img src="C:\Users\chris\OneDrive\v-day.html\couples picture.jpg" alt="couples picture"/>
+		
+		<img src="C:\Users\chris\OneDrive\v-day.html\us together.jpg" alt="us together"/>
+		
+    </div>
+	
+	  <div id="flowers">
+        <!-- Interactive flower icons -->
+        <div class="flower" onclick="changeFlowerColor(this)">🌸</div>
+        <div class="flower" onclick="changeFlowerColor(this)">💐</div>
+        <div class="flower" onclick="changeFlowerColor(this)">🌺</div>
+    </div>
+	
+			<button onclick="playAudio()">Play Our Song😽</button>
+		<button onclick="pauseAudio()"> Do U wanna pause this banger 😞</button>
+
+		<audio id="bgMusic">
+			<source src="C:\Users\chris\OneDrive\v-day.html\Lady Gaga, Bruno Mars - If the world was ending (Lyrics) (Die With A Smile).mp3" type="audio/mpeg">
+		</audio>
+		
+		<div id="heart-container"></div>
+
+
+    <script>
+        function changeBackground() {
+            document.body.style.backgroundColor = "red"; // Change background to color
+        }
+		
+		 function changeFlowerColor(flower) {
+            // Change the flower color randomly when clicked
+            const colors = ["#ff69b4", "#ff6347", "#ffd700", "#adff2f", "#8a2be2"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            flower.style.color = randomColor;
+			
+			} 
+			
+			function changeBackground() {
+    document.body.style.backgroundColor = document.body.style.backgroundColor === "red" ? "green" : "red";
+		
+			}
+			
+			var audio = document.getElementById("bgMusic");
+
+			function playAudio() {
+				audio.play();
+			}
+
+			function pauseAudio() {
+				audio.pause();
+			}
+		
+			function createHeart() {
+				const heart = document.createElement("div");
+				heart.classList.add("heart");
+				heart.innerHTML = "❤️"; // Heart Emoji
+				document.getElementById("heart-container").appendChild(heart);
+
+				// Random positioning
+				heart.style.left = Math.random() * 100 + "vw";
+				heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // 2-5s duration
+
+				// Remove heart after animation
+				setTimeout(() => {
+					heart.remove();
+				}, 5000);
+			}
+
+			// Create hearts when clicking anywhere on the screen
+			document.addEventListener("click", createHeart);
+
+			// Generate hearts at random intervals
+			setInterval(createHeart, 800);
+
+    </script>
+</body>
+</html>
